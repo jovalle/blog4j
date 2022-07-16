@@ -1,8 +1,7 @@
-+++
-date = "2019-11-22"
-title = "KubeCon San Diego"
-slug = "kubecon-san-diego"
-+++
+---
+date: "2019-11-22"
+title: KubeCon San Diego 2019
+---
 
 ![kubectl](/images/kubecon-san-diego/kubectl.jpeg)
 TL;DR: Set this alias to save up to 90% in the CLI! /s On a serious note, set this and check out kubectl [completion](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion) and [aliases](https://github.com/ahmetb/kubectl-aliases).
@@ -14,7 +13,7 @@ TL;DR: Set this alias to save up to 90% in the CLI! /s On a serious note, set th
 Beautiful town!
 
 ![San Diego Convention Center](/images/kubecon-san-diego/IMG_4712.jpeg)
-The San Diego Convention Center is a behemoth and getting lost was a daily occurrence. 
+The San Diego Convention Center is a behemoth and getting lost was a daily occurrence.
 
 ![Conveyor Belts](/images/kubecon-san-diego/IMG_4757.jpeg)
 I am sure I was not the only one who was overwhelmed by the sheer size of the event as there were 12,000 other souls on this starship.

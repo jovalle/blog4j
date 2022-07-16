@@ -1,0 +1,128 @@
+baseURL: "https://jovalle.github.io"
+title: Jay Ovalle
+paginate: 5
+theme:
+  - PaperMod
+languagecode: en
+defaultcontentlanguage: en
+canonifyurls: true
+
+pygmentsstyle: bw
+pygmentscodefences: true
+pygmentsStyle: trac
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+pygmentsCodefencesGuessSyntax: true
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: jovalle.github.io
+  description: "Jay Ovalle's Personal Blog"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Jay Ovalle
+  DateFormat: "January 2, 2006"
+  defaultTheme: light # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+
+  label:
+    text: "jovalle.github.io"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Jay Ovalle
+    subtitle: "Vice President @ JPMorgan Chase"
+    imageUrl: "/mugshot.jpg"
+    imageWidth: 240
+    imageHeight: 240
+    imageTitle: Jay Ovalle
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Jay Ovalle"
+    Content: Vice President @ JPMorgan Chase | etcd Whisperer | Homelab-er | He/Him/His
+
+  socialIcons:
+    - name: email
+      url: "mailto:jay.ovalle@gmail.com"
+    - name: github
+      url: "https://github.com/jovalle"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/jovalle6/"
+    - name: twitter
+      url: "https://twitter.com/jayroglyph/"
+    - name: instagram
+      url: "https://instagram.com/jayroglyph/"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: archive
+      name: Archive
+      url: /archive/
+      weight: 30
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 40
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai

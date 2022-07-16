@@ -1,29 +1,25 @@
-+++
-title = "About Hugo"
-slug = "about"
-+++
+---
+title: "About"
+---
 
-Hugo is a static site engine written in Go.
+Cloud engineer by day, homelabber and partner by night.
 
+1st-generation Dominican-American from the Gotham City depicted in Young Justice.
 
-It makes use of a variety of open source projects including:
+## Hobbies
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+### Homelabbing
+Running a few Kubernetes clusters across a diverse fleet of hardware:
 
-Learn more and contribute on [GitHub](https://github.com/spf13).
+- A multi-arch (amd64/arm64), hybrid (baremetal + VMs) Kubernetes cluster using a couple of Intel/AMD PCs, a handful of Raspberry Pis and VMs on 2U server. [Infrastructure as Code](https://github.com/jovalle/technis). Used to host my go-to applications including open-sources services for automating things around the house.
+- TrueNAS SCALE on vSphere. Hosts my perpetually growing collection of media, including photos, old movies and tons of ISOs.
 
-## Setup
+Some services are exposed to the internet for access on the go and sharing with family and friends. Using [HAProxy](/posts/multi-cluster-haproxy) to join the two clusters under the same domain.
 
-Some fun facts about [Hugo](http://gohugo.io/):
+Network diagram coming soon&#8482;. First to [r/homelab](https://reddit.com/r/homelab).
 
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
+### Sim Racing
+Fanatec fanatic. Currently playing as Lamborghini (custom team, I dislike Ferrari) in F1 22 My Team.
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
-
-Thanks for reading!
+### (Semi-)Electric Guitars
+Mostly arpeggios and Rocksmith 2014. Cannot memorize a chord for my life.

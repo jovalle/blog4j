@@ -1,1 +1,12 @@
+# OS crap
 .DS_Store
+
+# Misc
+misc
+
+# Runtime
+*.lock
+
+# Logs
+logs
+*.log

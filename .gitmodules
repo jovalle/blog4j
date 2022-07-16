@@ -1,9 +1,7 @@
 [submodule "public"]
 	path = public
-	url = https://github.com/jovalle/jovalle.github.io
-	branch = master
-
-[submodule "themes/hugo-coder"]
-	path = themes/hugo-coder
-	url = git@github.com:luizdepra/hugo-coder
-	branch = master
+    url = https://github.com/jovalle/jovalle.github.io
+    branch = main
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod
