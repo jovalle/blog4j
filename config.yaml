@@ -30,7 +30,8 @@ menu:
 minify:
   disableXML: true
   minifyOutput: true
-paginate: 5
+pagination:
+  pagerSize: 5
 params:
   DateFormat: "January 2, 2006"
   ShowBreadCrumbs: true
