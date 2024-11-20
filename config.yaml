@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://platen.io/schemas/config/schema.json
-baseURL: "https://jovalle.github.io"
+baseURL: "https://blog4j.me"
 languageCode: en-us
 markup:
   goldmark:
