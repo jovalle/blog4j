@@ -52,7 +52,7 @@ params:
     hiddenInList: true
     hiddenInSingle: true
   defaultTheme: dark
-  description: &header "Blog4j"
+  description: &header blog4j
   disableScrollToTop: false
   disableSpecial1stPost: false
   disableThemeToggle: false
@@ -98,4 +98,4 @@ pygmentsCodeFencesGuessSyntax: true
 pygmentsStyle: trac
 pygmentsUseClasses: true
 theme: PaperMod
-title: *title
+title: *header
