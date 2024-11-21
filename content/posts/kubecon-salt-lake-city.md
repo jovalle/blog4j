@@ -28,7 +28,7 @@ I certainly knew I was in the right place seeing fellow passengers with, sometim
 
 ## [Day 1: Cloud Native Rejekts (Sunday)](/posts/cloud-native-rejekts)
 
-## [Day 2: WasmCon (Monday)](/posts/cloud-native-rejekts)
+## [Day 2: WasmCon (Monday)](/posts/wasmcon)
 
 ## [Day 3: Cilium + eBPF Day (Tuesday)](/posts/cilium-ebpf-day)
 
