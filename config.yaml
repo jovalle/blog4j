@@ -39,7 +39,7 @@ params:
   ShowPostNavLinks: true
   ShowReadingTime: true
   ShowRssButtonInSectionTermList: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowWordCount: true
   UseHugoToc: true
   assets:

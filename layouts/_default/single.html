@@ -44,6 +44,18 @@
   </div>
   {{- end }}
 
+  {{- if or (findRE "```mermaid" .RawContent) (findRE "{{<.*mermaid.*>}}" .RawContent) }}
+  <!-- Load Mermaid.js for diagram rendering -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: '{{ if eq .Site.Params.defaultTheme "dark" }}dark{{ else }}default{{ end }}',
+      securityLevel: 'loose'
+    });
+  </script>
+  {{- end }}
+
   {{ if .Params.showMap }}
   <!-- Load Leaflet.js styles and scripts -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

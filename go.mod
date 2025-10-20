@@ -1,4 +1,4 @@
-module github.com/jovalle/blog
+module github.com/jovalle/blog4j
 
 go 1.18
 

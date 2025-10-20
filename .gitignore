@@ -10,3 +10,7 @@ misc
 # Logs
 logs
 *.log
+
+# Generated content
+public/
+node_modules
