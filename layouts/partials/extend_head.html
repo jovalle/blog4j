@@ -156,6 +156,12 @@
 
     // Add toggle button and listeners when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
+        // Only show toggle on home page (check for profile element)
+        const profile = document.querySelector('.profile .profile_inner');
+        if (!profile) {
+            return; // Not on home page, exit early
+        }
+
         // Create toggle button
         const toggleButton = document.createElement('button');
         toggleButton.id = 'style-toggle';
@@ -167,10 +173,7 @@
         toggleButton.addEventListener('click', toggleStyle);
 
         // Add click listener to profile
-        const profile = document.querySelector('.profile .profile_inner');
-        if (profile) {
-            profile.addEventListener('click', toggleStyle);
-        }
+        profile.addEventListener('click', toggleStyle);
     });
 })();
 </script>
