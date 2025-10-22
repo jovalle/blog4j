@@ -70,3 +70,20 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     height: 1px;
     background: linear-gradient(to right, transparent, var(--border), transparent);
 }
+
+/* Fun fact box styling */
+.fun-fact {
+  background: linear-gradient(135deg, rgba(var(--primary-rgb, 30, 30, 46), 0.5), rgba(var(--tertiary-rgb, 45, 45, 68), 0.3));
+  border-left: 4px solid var(--accent, #7aa2f7);
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.fun-fact::before {
+  content: "💡 Fun Fact: ";
+  font-weight: bold;
+  font-style: normal;
+  color: var(--accent, #7aa2f7);
+}

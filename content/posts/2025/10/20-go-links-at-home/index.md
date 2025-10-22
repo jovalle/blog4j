@@ -18,7 +18,9 @@ Go links (also known as "go/" shortcuts) have been a staple at companies like Go
 
 This is typically achieved through DNS search domains combined with HTTP redirects.
 
-**Fun Fact**: I helped develop a "Smartlink" solution during my time at Cisco to implement go-links with auto-correction in the intranet.
+<div class="fun-fact">
+I helped develop a "Smartlink" solution during my time at Cisco to implement go-links with auto-correction in the intranet.
+</div>
 
 ## How It Works
 

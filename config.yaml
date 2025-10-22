@@ -79,7 +79,7 @@ params:
     enabled: true
     imageHeight: 240
     imageTitle: *name
-    imageUrl: "/mugshot.jpg"
+    imageUrl: "/android-chrome-512x512.png"
     imageWidth: 240
     subtitle: *title
     title: *name

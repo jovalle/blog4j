@@ -1,48 +1,11 @@
 {{- define "main" }}
 
-<!-- based on themes/PaperMod/layouts/_default/single.html -->
-
 <article class="post-single">
-  <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
-    <h1 class="post-title entry-hint-parent">
-      {{ .Title }}
-      {{- if .Draft }}
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-      {{- end }}
-    </h1>
-    {{- if .Description }}
-    <div class="post-description">
-      {{ .Description }}
-    </div>
-    {{- end }}
-    {{- if not (.Param "hideMeta") }}
-    <div class="post-meta">
-      {{- partial "post_meta.html" . -}}
-      {{- partial "translation_list.html" . -}}
-      {{- partial "edit_post.html" . -}}
-      {{- partial "post_canonical.html" . -}}
-    </div>
-    {{- end }}
-  </header>
-  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
-
-  {{- if .Content }}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
   </div>
-  {{- end }}
 
   {{- if or (findRE "```mermaid" .RawContent) (findRE "{{<.*mermaid.*>}}" .RawContent) }}
   <!-- Load Mermaid.js for diagram rendering -->
@@ -80,6 +43,7 @@
         { name: 'Cabo, Mexico', lat: 22.8905, lng: -109.9167 },
         { name: 'Cartagena, Colombia', lat: 10.3910, lng: -75.4794 },
         { name: 'Chicago, NY', lat: 41.8781, lng: -87.6298 },
+        { name: 'Cozumel, Mexico', lat: 20.4230, lng: -86.9223 },
         { name: 'Durham, NC', lat: 35.9940, lng: -78.8986 },
         { name: 'Hartford, CT', lat: 41.7637, lng: -72.6851 },
         { name: 'Houston, TX', lat: 29.7604, lng: -95.3698 },
@@ -99,12 +63,14 @@
         { name: 'Punta Cana, DR', lat: 18.5601, lng: -68.3725 },
         { name: 'RTP, NC', lat: 35.9057, lng: -78.8657 },
         { name: 'Raleigh, NC', lat: 35.7796, lng: -78.6382 },
+        { name: 'Roatan, Honduras', lat: 16.3298, lng: -86.5300 },
         { name: 'Rochester, NY', lat: 43.1610, lng: -77.6109 },
         { name: 'Salt Lake City, NY', lat: 40.7608, lng: -111.8910 },
         { name: 'San Francisco de Macoris, DR', lat: 19.3092, lng: -70.2500 },
         { name: 'San Francisco, CA', lat: 37.7749, lng: -122.4194 },
         { name: 'San Juan, PR', lat: 18.4655, lng: -66.1057 },
         { name: 'Santiago, DR', lat: 19.4326, lng: -70.7016 },
+        { name: 'Santo Domingo, DR', lat: 18.4626, lng: -69.9361 },
         { name: 'Seoul, Korea', lat: 37.5665, lng: 126.9780 },
         { name: 'Sevilla, Spain', lat: 37.3891, lng: -5.9845 },
         { name: 'St. Louis, MO', lat: 38.6270, lng: -90.1994 },
@@ -156,17 +122,8 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
-    {{- if (.Param "ShowPostNavLinks") }}
-    {{- partial "post_nav_links.html" . }}
-    {{- end }}
-    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-    {{- partial "share_icons.html" . -}}
-    {{- end }}
   </footer>
 
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}
 </article>
 
 {{- end }}{{/* end main */}}
