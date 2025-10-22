@@ -7,11 +7,14 @@ tags: ["traefik", "networking", "homelab"]
 
 ## The Problem
 
-Typing full URLs gets tedious. `status.example.com` is a mouthful when you just want to check your dashboard. What if you could just type `go/status` in your browser and instantly get there?
+Typing full URLs gets tedious. `status.example.com` is a mouthful when you just
+want to check your dashboard. What if you could just type `go/status` in your browser
+and instantly get there?
 
 ## The Solution: Go Links
 
-Go links (also known as "go/" shortcuts) have been a staple at companies like Google for years. The concept is simple:
+Go links (also known as "go/" shortcuts) have been a staple at companies like Google
+for years. The concept is simple:
 
 - Type `go/something` in your browser
 - Get redirected to `https://something.example.com`
@@ -19,7 +22,8 @@ Go links (also known as "go/" shortcuts) have been a staple at companies like Go
 This is typically achieved through DNS search domains combined with HTTP redirects.
 
 <div class="fun-fact">
-I helped develop a "Smartlink" solution during my time at Cisco to implement go-links with auto-correction in the intranet.
+I helped develop a "Smartlink" solution during my time at Cisco to implement go-links
+with auto-correction in the intranet.
 </div>
 
 ## How It Works
@@ -28,7 +32,8 @@ The magic happens in two parts:
 
 ### 1. DNS Search Domain
 
-Configure your LAN to use a search domain `example.com`. When you type `go/status` in your browser:
+Configure your LAN to use a search domain `example.com`. When you type `go/status`
+in your browser:
 
 - Your browser searches for `go.example.com`
 - DNS resolves `go.example.com` to your Traefik instance
@@ -36,7 +41,8 @@ Configure your LAN to use a search domain `example.com`. When you type `go/statu
 
 ### 2. Traefik Path-Based Redirects
 
-Traefik intercepts the request and applies custom middleware to parse the path and construct a new URL:
+Traefik intercepts the request and applies custom middleware to parse the path and
+construct a new URL:
 
 - **`$1`** = subdomain (extracted from path)
 - **`$2`** = subpath on destination (optional trailing path)
@@ -50,20 +56,20 @@ For example:
 
 {{< mermaid >}}
 sequenceDiagram
-    participant Browser
-    participant DNS
-    participant Traefik
-    participant Destination
+  participant Browser
+  participant DNS
+  participant Traefik
+  participant Destination
 
-    Browser->>Browser: User types "go/status"
-    Browser->>DNS: Lookup "go.example.com"
-    DNS-->>Browser: Returns Traefik IP
-    Browser->>Traefik: GET http://go.example.com/status
-    Traefik->>Traefik: Parse path: $1="status", $2=""
-    Traefik->>Traefik: Construct: https://status.example.com
-    Traefik-->>Browser: 302 Redirect to https://status.example.com
-    Browser->>Destination: GET https://status.example.com
-    Destination-->>Browser: Return page
+  Browser->>Browser: User types "go/status"
+  Browser->>DNS: Lookup "go.example.com"
+  DNS-->>Browser: Returns Traefik IP
+  Browser->>Traefik: GET http://go.example.com/status
+  Traefik->>Traefik: Parse path: $1="status", $2=""
+  Traefik->>Traefik: Construct: https://status.example.com
+  Traefik-->>Browser: 302 Redirect to https://status.example.com
+  Browser->>Destination: GET https://status.example.com
+  Destination-->>Browser: Return page
 {{< /mermaid >}}
 
 ## Implementation
@@ -120,7 +126,8 @@ Clean, fast, and elegant.
 
 ## Future State: Custom Rule Engine
 
-While the current implementation works great for internal services following the `subdomain.example.com` pattern, there are cases where you need more flexibility:
+While the current implementation works great for internal services following the
+`subdomain.example.com` pattern, there are cases where you need more flexibility:
 
 ### The Limitation
 
@@ -176,7 +183,17 @@ flowchart LR
 - Link expiration
 - A/B testing for redirects
 
+## Alternatives
+
+There are browser extensions ([Golinks](https://www.golinks.io/) and [Trotto](https://www.trot.to/))
+that accomplish must of the same thing but require manually adding links. There's
+also Tailscale's [golink](https://github.com/tailscale/golink) but only works within
+a [tailnet](https://tailscale.com/kb/1136/tailnet) and still needs to be manually
+populated.
+
 ## References
 
 - [Traefik Documentation](https://doc.traefik.io/traefik/)
-- [Go Links at Google](https://www.golinks.io)
+- [GoLinks](https://www.golinks.io)
+- [Trotto](https://www.trot.to/)
+- [tailscale/golink](https://github.com/tailscale/golink)
