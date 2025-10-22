@@ -81,7 +81,7 @@ params:
     imageTitle: *name
     imageUrl: "/android-chrome-512x512.png"
     imageWidth: 240
-    subtitle: *title
+    subtitle: "Infrastructure Engineer @ JPMorganChase"
     title: *name
   social:
     - name: email

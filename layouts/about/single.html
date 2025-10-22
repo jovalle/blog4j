@@ -1,5 +1,45 @@
 {{- define "main" }}
 
+<style>
+/* About page photo hover animation and click toggle */
+.post-content img[src*="animated-cropped"],
+.post-content img[src*="mugshot"] {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-content img[src*="animated-cropped"]:hover,
+.post-content img[src*="mugshot"]:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.post-content img[src*="animated-cropped"]:active,
+.post-content img[src*="mugshot"]:active {
+  transform: scale(0.98);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const profileImg = document.querySelector('.post-content img[src*="animated-cropped"]');
+  if (profileImg) {
+    let isOriginal = true;
+    const originalSrc = profileImg.src;
+    const mugshotSrc = '/images/mugshot.jpg';
+
+    profileImg.addEventListener('click', function() {
+      if (isOriginal) {
+        profileImg.src = mugshotSrc;
+      } else {
+        profileImg.src = originalSrc;
+      }
+      isOriginal = !isOriginal;
+    });
+  }
+});
+</script>
+
 <article class="post-single">
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
